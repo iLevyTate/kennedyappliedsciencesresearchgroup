@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kennedyappliedsciencesresearchgroup.com/sitemap.xml
+Sitemap: https://www.kennedyappliedsciencesresearchgroup.com/sitemap.xml
