@@ -55,7 +55,7 @@ ASH = (248, 247, 245)    # --ash
 ASHD = (212, 209, 204)   # --ashd
 TG = (138, 138, 138)     # --tg
 
-SITE = "kennedyappliedsciences.com"
+SITE = "kennedyappliedsciencesresearchgroup.com"
 TAGLINE = "Independent applied AI research"
 
 # Thinnest stroke in the 2048px source (the gray wing outline), in source pixels.
