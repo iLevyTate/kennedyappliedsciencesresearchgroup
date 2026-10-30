@@ -1,0 +1,20 @@
+{
+  "name": "Kennedy Applied Sciences Research Group",
+  "short_name": "KAS Research",
+  "description": "Independent applied AI research practice. Select products commercialized from our lab.",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0C0C0C",
+  "theme_color": "#0C0C0C",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["education", "productivity", "technology"],
+  "icons": [
+    { "src": "/assets/icons/android-chrome-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/android-chrome-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
