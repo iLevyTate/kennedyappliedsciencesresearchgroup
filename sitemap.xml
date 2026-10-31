@@ -18,6 +18,7 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <!-- per-site:sitemap-urls -->
   <url>
     <loc>https://www.kennedyappliedsciencesresearchgroup.com/norklar/</loc>
     <lastmod>2026-10-30</lastmod>
@@ -42,4 +43,5 @@
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
+  <!-- /per-site:sitemap-urls -->
 </urlset>
