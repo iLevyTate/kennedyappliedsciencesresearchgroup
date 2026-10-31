@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <title>Norklar Privacy Policy · Kennedy Applied Sciences Research Group</title>
-<meta name="description" content="How Norklar handles your data: nothing leaves the device without an account; an optional cloud account stores your email, name and usage counts and sends question text to Google Gemini.">
+<meta name="description" content="How Norklar handles your data: no data is collected without an account; an optional cloud account stores your email, name and usage counts and sends question text to Google Gemini.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0C0C0C">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -63,6 +63,8 @@ td:first-child{white-space:nowrap;color:var(--ash)}
 .card{display:block;background:var(--cb);border:1px solid var(--rule);border-radius:10px;padding:20px 22px;color:var(--ashd)}
 .card:hover{border-color:rgba(200,121,65,0.4);color:var(--ashd)}
 .card strong{display:block;font-size:17px;margin-bottom:4px}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 20px}
+main table td,main table th{white-space:normal;overflow-wrap:anywhere}
 </style>
 </head>
 <body>
@@ -100,20 +102,20 @@ td:first-child{white-space:nowrap;color:var(--ash)}
 
   <h2>Using Norklar with a cloud account</h2>
   <p>Creating a cloud account starts Google Firebase inside the app. From then on, Norklar processes:</p>
-  <table>
+  <div class="tbl"><table>
     <thead><tr><th>Data</th><th>Why</th><th>Where it is kept</th></tr></thead>
     <tbody>
       <tr><td>Email address, display name</td><td>Sign-in and account management</td><td>Firebase Authentication and a profile record in Cloud Firestore (Google Cloud, United States)</td></tr>
       <tr><td>Monthly count of cloud replies used</td><td>Enforcing your plan&rsquo;s allowance</td><td>Cloud Firestore, one record per month</td></tr>
-      <tr><td>The text of questions you send to the cloud assistant, and the session text you choose to include</td><td>Generating the reply</td><td>Sent through Norklar&rsquo;s Cloud Functions to Google&rsquo;s Gemini models on Vertex AI. Norklar does not store prompts or replies on its servers. Google processes them under the Google Cloud terms, which do not allow Google to use this data to train its models.</td></tr>
-      <tr><td>Firebase installation ID and App Check (Play Integrity / DeviceCheck) tokens</td><td>Confirming requests come from a genuine copy of Norklar, abuse prevention</td><td>Google Firebase</td></tr>
+      <tr><td>Questions and session text you send to the cloud assistant</td><td>Generating the reply</td><td>Sent through Norklar&rsquo;s Cloud Functions to Google&rsquo;s Gemini models on Vertex AI. Norklar does not store prompts or replies on its servers. Google processes them under the Google Cloud terms, which do not allow Google to use this data to train its models.</td></tr>
+      <tr><td>Firebase installation ID and App Check tokens</td><td>Confirming requests come from a genuine copy of Norklar, abuse prevention</td><td>Google Firebase</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <p>Norklar never uploads photos, voice notes or documents to its servers. Signing in does not upload your existing sessions.</p>
   <p>Norklar does not sell personal data and does not share it with third parties for their own purposes. Google acts as a service provider under the terms above.</p>
 
   <h2>Permissions we request and why</h2>
-  <table>
+  <div class="tbl"><table>
     <thead><tr><th>Permission</th><th>Used for</th></tr></thead>
     <tbody>
       <tr><td>Camera</td><td>Photo and video attachments for a session, only when you tap the camera control.</td></tr>
@@ -123,7 +125,7 @@ td:first-child{white-space:nowrap;color:var(--ash)}
       <tr><td>Biometric</td><td>Optional biometric unlock in place of your PIN.</td></tr>
       <tr><td>Internet / network state</td><td>Model downloads, the optional cloud account, and the optional relay server.</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <p>You can revoke any permission in your device settings; the matching feature becomes unavailable until you grant it again.</p>
 
   <h2>Reporting AI replies</h2>
