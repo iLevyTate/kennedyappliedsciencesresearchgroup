@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <title>Norklar Privacy Policy · Kennedy Applied Sciences Research Group</title>
-<meta name="description" content="How Norklar handles your data: no data is collected without an account; an optional cloud account stores your email, name and usage counts and sends question text to Google Gemini.">
+<meta name="description" content="How Norklar handles your data: without an account nothing is collected except AI reply reports you choose to send; an optional cloud account (email or Continue with Google) stores your email, name and usage counts and sends your questions, problem statements, session text and project chat details to Google Gemini.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0C0C0C">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -79,15 +79,15 @@ main table td,main table td:first-child,main table th{white-space:normal;overflo
   <div class="crumb"><a href="/">Home</a> <a href="/norklar/">/ Norklar</a> / Privacy</div>
   <h1>Norklar Privacy Policy</h1>
   <p class="lead">Norklar is a local-first thinking assistant. Everything works on your device without an account. A cloud account is optional and only exists if you create one.</p>
-  <div class="updated">Effective date: <time datetime="2026-10-31">2026-10-31</time></div>
+  <div class="updated">Effective date: <time datetime="2026-11-03">2026-11-03</time></div>
 
   <p><strong>Publisher:</strong> Kennedy Applied Sciences Research Group</p>
   <p><strong>Contact:</strong> <a href="mailto:contact@kennedyappliedsciencesresearchgroup.com">contact@kennedyappliedsciencesresearchgroup.com</a></p>
 
   <h2>Summary</h2>
   <ul>
-    <li><strong>Without an account, Norklar collects nothing.</strong> Your sessions, projects, journal, photos, voice notes and settings stay on your device. The app does not run analytics, advertising or crash-reporting SDKs. Its only network use is downloading an AI model you ask for, unless you configure a relay server (below).</li>
-    <li><strong>With an optional cloud account</strong>, Norklar stores your email address, display name and monthly usage counts, and sends the text of the questions you ask the cloud assistant to Google&rsquo;s Gemini models to generate a reply. Photos and voice notes are never uploaded.</li>
+    <li><strong>Without an account, Norklar collects nothing except an AI reply report you choose to send.</strong> Your sessions, projects, journal, photos, voice notes and settings stay on your device. The app does not run analytics, advertising or crash-reporting SDKs. Its only network use is downloading an AI model you ask for and sending an AI reply report when you tap Send report, unless you configure a relay server (below).</li>
+    <li><strong>With an optional cloud account</strong>, Norklar stores your email address, display name and monthly usage counts, and sends your questions, problem statements, session text and project chat details to Google&rsquo;s Gemini models to generate replies. Documents, photos and voice notes are never uploaded.</li>
     <li>You can delete your cloud account from inside the app at any time, or request deletion at <a href="https://www.kennedyappliedsciencesresearchgroup.com/norklar/delete-account.html">https://www.kennedyappliedsciencesresearchgroup.com/norklar/delete-account.html</a>.</li>
   </ul>
 
@@ -96,47 +96,51 @@ main table td,main table td:first-child,main table th{white-space:normal;overflo
   <p>The app connects to the internet in these cases only:</p>
   <ol>
     <li><strong>Downloading an on-device AI model</strong> from Hugging Face (<a href="https://huggingface.co">huggingface.co</a>) when you tap Download. The request fetches the model file and carries none of your content. If you supply a Hugging Face token for a gated model, it is kept in your device&rsquo;s secure storage and sent only to Hugging Face.</li>
-    <li><strong>A relay server you configure yourself.</strong> If you enter a server address and access key under AI settings, the text of your questions is sent to that server, which forwards it to the AI provider it is configured with (OpenRouter). Photos and voice notes are not sent. This is off unless you set it up. The relay keeps only your access key&rsquo;s usage count; it does not store your questions.</li>
+    <li><strong>A relay server you configure yourself.</strong> If you enter a server address and access key under AI settings, your questions, problem statements, session text and project chat details are sent to that server, which forwards them to the AI provider it is configured with (OpenRouter). Documents, photos and voice notes are not sent. This is off unless you set it up. The relay keeps only your access key&rsquo;s usage count; it does not store your questions.</li>
   </ol>
   <p>On-device AI replies are generated entirely on your phone.</p>
 
   <h2>Using Norklar with a cloud account</h2>
-  <p>Creating a cloud account starts Google Firebase inside the app. From then on, Norklar processes:</p>
+  <p>Creating a cloud account starts Google Firebase inside the app. Before you sign in, the app shows what will be sent and asks you to tap Continue. You can sign up with an email and password or, on Android, with Continue with Google. If you sign up with an email and password, Firebase sends one confirmation email to that address so a password reset can reach you. If you use Google, Google confirms who you are and shares your email address, name and a link to your profile photo. Norklar uses the email and name for your account. Firebase Authentication keeps the photo link with your account record, but Norklar does not show or use it, and gets no access to your Google data beyond these details. From then on, Norklar processes:</p>
   <div class="tbl"><table>
     <thead><tr><th>Data</th><th>Why</th><th>Where it is kept</th></tr></thead>
     <tbody>
       <tr><td>Email address, display name</td><td>Sign-in and account management</td><td>Firebase Authentication and a profile record in Cloud Firestore (Google Cloud, United States)</td></tr>
+      <tr><td>Profile photo link (Continue with Google only)</td><td>Supplied by Google with the sign-in; not shown or used by Norklar</td><td>Firebase Authentication, with your account record</td></tr>
       <tr><td>Monthly count of cloud replies used</td><td>Enforcing your plan&rsquo;s allowance</td><td>Cloud Firestore, one record per month</td></tr>
-      <tr><td>The text of your questions, the problem statements you enter, and the session text used to write summaries</td><td>Generating the reply</td><td>Sent through Norklar&rsquo;s Cloud Functions to Google&rsquo;s Gemini models on Vertex AI. Norklar does not store prompts or replies on its servers. Google processes them under the Google Cloud terms, which do not allow Google to use this data to train its models.</td></tr>
+      <tr><td>The text of your questions, the problem statements you enter, the session text used to write summaries, and, for project chat, the project&rsquo;s title, situation, goal, progress notes and recent messages</td><td>Generating the reply</td><td>Sent through Norklar&rsquo;s Cloud Functions to Google&rsquo;s Gemini models on Vertex AI. Norklar does not store prompts or replies on its servers. Google processes them under the Google Cloud terms, which do not allow Google to use this data to train its models.</td></tr>
       <tr><td>Firebase installation ID and App Check (Play Integrity / DeviceCheck) tokens</td><td>Confirming requests come from a genuine copy of Norklar, abuse prevention</td><td>Google Firebase</td></tr>
     </tbody>
   </table></div>
-  <p>Norklar never uploads photos, voice notes or documents to its servers. Signing in does not upload your existing sessions. While you are signed in, text-only questions, problem statements and session summaries are generated in the cloud automatically; a session that contains a photo or voice note is handled entirely on your device.</p>
+  <p>Norklar never uploads photos, voice notes or documents to its servers. Signing in does not upload your existing sessions. While you are signed in, text-only questions, problem statements and session summaries are generated in the cloud automatically, including the summary of a session you started before signing in and finish afterwards; a session that contains a photo or voice note is handled entirely on your device. To keep everything on your phone without signing out, turn off You &rarr; Account &rarr; Cloud account &rarr; Use cloud replies. Project chat never sends a project&rsquo;s documents or the sessions linked to it, including their file names.</p>
   <p>Norklar does not sell personal data and does not share it with third parties for their own purposes. Google acts as a service provider under the terms above.</p>
 
   <h2>Permissions we request and why</h2>
   <div class="tbl"><table>
     <thead><tr><th>Permission</th><th>Used for</th></tr></thead>
     <tbody>
-      <tr><td>Camera</td><td>Photo and video attachments for a session, only when you tap the camera control.</td></tr>
+      <tr><td>Camera (iOS only)</td><td>Photo and video attachments for a session, only when you tap the camera control. On Android, Norklar asks for no camera permission: your phone&rsquo;s camera app takes the photo or video and hands it back.</td></tr>
       <tr><td>Microphone</td><td>Voice notes, only when you tap the voice control.</td></tr>
-      <tr><td>Photos / media</td><td>Attaching files you pick from your device.</td></tr>
+      <tr><td>Photos / media</td><td>Attaching files you pick from your device. Android uses the system picker with no permission; iOS asks for photo library access.</td></tr>
       <tr><td>Notifications</td><td>Reminders you schedule from a session summary.</td></tr>
+      <tr><td>Run at startup</td><td>Restoring scheduled reminders after your phone restarts.</td></tr>
       <tr><td>Biometric</td><td>Optional biometric unlock in place of your PIN.</td></tr>
-      <tr><td>Internet / network state</td><td>Model downloads, the optional cloud account, and the optional relay server.</td></tr>
+      <tr><td>Internet / network state</td><td>Model downloads, AI reply reports you send, the optional cloud account, and the optional relay server.</td></tr>
     </tbody>
   </table></div>
   <p>You can revoke any permission in your device settings; the matching feature becomes unavailable until you grant it again.</p>
 
   <h2>Reporting AI replies</h2>
-  <p>Every reply in Ask and project chat has a Report control. Reports are sent by email from your device to <a href="mailto:contact@kennedyappliedsciencesresearchgroup.com">contact@kennedyappliedsciencesresearchgroup.com</a> and include the reply text so we can review it. Nothing is sent unless you tap Send.</p>
+  <p>Every AI reply and AI-written summary or recommendation has a Report control. When you tap Send report, the app sends the reason you picked, the reply text, the app version, which screen it came from and a random ID made on your phone (used only to limit each phone to 10 reports an hour, and stored on our side only as a one-way hash) to Norklar&rsquo;s Cloud Function. To stop one sender from flooding reports, the function also counts reports per network address for an hour; it keeps only a one-way hash of the address, never the address itself, and that count is deleted automatically, usually within a day. Your question, your other messages and your cloud account are not included, and nothing is sent until you tap Send report. Reports are kept in Google Cloud Firestore (United States), readable only by the Norklar team, and deleted after 90 days. If sending fails, you can instead open an email draft to <a href="mailto:contact@kennedyappliedsciencesresearchgroup.com">contact@kennedyappliedsciencesresearchgroup.com</a>, and nothing is sent unless you send it from your mail app.</p>
+  <p>Send Feedback on the You tab goes the same way as that fallback: it opens an email draft to that address in your mail app, and nothing is sent unless you send it. A bug report can add device details to the draft: the app version, the Android version and device model, the app language, which on-device model is chosen and whether it is loaded or last crashed while loading, and whether cloud replies are on. The sheet shows these details before you send, and you can switch them off. They never include your sessions, projects or account email.</p>
 
   <h2>Retention and deletion</h2>
   <ul>
-    <li><strong>On-device data</strong> is removed by Settings &rarr; Clear All Data, or by uninstalling the app.</li>
-    <li><strong>Cloud account data</strong> is kept until you delete the account. In the app: Settings &rarr; Local AI &rarr; Cloud account &rarr; Delete cloud account. This removes your authentication record, profile, usage counts and anything stored under your account on Norklar&rsquo;s servers, immediately and permanently. Sessions stored on your phone are not affected.</li>
+    <li><strong>On-device data</strong> is removed by You &rarr; Clear All Data, or by uninstalling the app. Clear All Data also signs you out of a cloud account, but the account stays until you delete it.</li>
+    <li><strong>Cloud account data</strong> is kept until you delete the account. In the app: You &rarr; Account &rarr; Cloud account &rarr; Delete cloud account. This removes your authentication record, profile, usage counts and anything stored under your account on Norklar&rsquo;s servers, immediately and permanently. Sessions stored on your phone are not affected.</li>
     <li>If you cannot use the app, request deletion at <a href="https://www.kennedyappliedsciencesresearchgroup.com/norklar/delete-account.html">https://www.kennedyappliedsciencesresearchgroup.com/norklar/delete-account.html</a> or by emailing <a href="mailto:contact@kennedyappliedsciencesresearchgroup.com">contact@kennedyappliedsciencesresearchgroup.com</a> from the account&rsquo;s address. Requests are completed within 30 days.</li>
     <li>Prompts sent to the cloud assistant are not retained by Norklar after the reply is returned.</li>
+    <li><strong>AI reply reports</strong> are deleted automatically 90 days after they are sent.</li>
   </ul>
 
   <h2>Children</h2>
